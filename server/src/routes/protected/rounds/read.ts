@@ -38,21 +38,18 @@ export default <RouteOptions>{
                   Score.sum("value", {
                     where: { roundId: id },
                   }),
-                ]).then(
-                  ([ownScore, maxScore, totalScore]) => (
-                    console.log("##############", totalScore),
-                    Object.assign(round.toJSON(), {
-                      ...(maxScore && {
-                        winner: {
-                          userId: maxScore.userId,
-                          name: maxScore.user?.name,
-                          score: maxScore.value,
-                        },
-                      }),
-                      ...(ownScore && { ownScore: ownScore?.value }),
-                      ...(totalScore && { totalScore }),
-                    })
-                  )
+                ]).then(([ownScore, maxScore, totalScore]) =>
+                  Object.assign(round.toJSON(), {
+                    ...(maxScore && {
+                      winner: {
+                        userId: maxScore.userId,
+                        name: maxScore.user?.name,
+                        score: maxScore.value,
+                      },
+                    }),
+                    ...(ownScore && { ownScore: ownScore?.value }),
+                    ...(totalScore && { totalScore }),
+                  })
                 )
               : round
             : res.code(404).send("Not Found")
