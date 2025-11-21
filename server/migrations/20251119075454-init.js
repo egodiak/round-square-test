@@ -53,11 +53,6 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      totalScore: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        defaultValue: 0,
-      },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
     });
