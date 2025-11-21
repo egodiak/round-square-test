@@ -1,0 +1,48 @@
+.card.round-card {
+  position: relative;
+  margin: 1em auto;
+  width: 100%;
+  max-width: 30em;
+  border-radius: 0.33em;
+  border-color: #4b48d6;
+  box-shadow: 0 0 1rem rgba(87, 85, 217, 0.33);
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+}
+
+#tapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  isolation: isolate;
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+  border: none;
+  background: none;
+  z-index: 1;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#tapper[disabled] {
+  cursor: not-allowed;
+}
+
+#goose {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  z-index: 0;
+}
+#tapper[disabled] {
+  cursor: not-allowed;
+}
